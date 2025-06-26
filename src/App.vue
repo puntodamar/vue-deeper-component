@@ -2,16 +2,12 @@
   <div>
 
     <the-header></the-header>
-    <base-card>
-      <badge-list></badge-list>
-    </base-card>
-    <base-card>
-      <user-info
-          :full-name="activeUser.name"
-          :info-text="activeUser.description"
-          :role="activeUser.role"
-      ></user-info>
-    </base-card>
+    <badge-list></badge-list>
+    <user-info
+        :full-name="activeUser.name"
+        :info-text="activeUser.description"
+        :role="activeUser.role"
+    ></user-info>
   </div>
 </template>
 
@@ -29,7 +25,7 @@ export default {
   data() {
     return {
       activeUser: {
-        name: 'Maximilian Schwarzmüller',
+        name: 'John Doe',
         description: 'Site owner and admin',
         role: 'admin',
       },

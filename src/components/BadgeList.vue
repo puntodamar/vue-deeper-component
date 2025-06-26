@@ -1,6 +1,8 @@
 <template>
-  <section>
-    <h2>Available Badges</h2>
+  <base-card>
+    <template v-slot:header>
+      <h2>Available Badges</h2>
+    </template>
     <ul>
       <li>
         <base-badge type="admin" caption="ADMIN"></base-badge>
@@ -9,7 +11,7 @@
         <base-badge type="author" caption="AUTHOR"></base-badge>
       </li>
     </ul>
-  </section>
+  </base-card>
 </template>
 
 <style scoped>
@@ -31,3 +33,12 @@ li {
   margin-right: 1rem;
 }
 </style>
+<script>
+import BaseCard from "@/components/BaseCard.vue";
+
+export default {
+  components: {
+    BaseCard,
+  }
+}
+</script>
