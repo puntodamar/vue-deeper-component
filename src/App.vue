@@ -2,6 +2,12 @@
   <div>
 
     <the-header></the-header>
+    <keep-alive>
+      <component :is="selectedComponent"></component>
+    </keep-alive>
+
+    <button @click="setSelectedComponent('active-goal')">Active Goal</button>
+    <button @click="setSelectedComponent('manage-goal')">Manage Goal</button>
     <badge-list></badge-list>
     <user-info
         :full-name="activeUser.name"
@@ -19,6 +25,8 @@ import BadgeList from './components/BadgeList.vue';
 import UserInfo from './components/UserInfo.vue';
 import TheHeader from './components/TheHeader.vue';
 import CourseGoal from "@/components/CourseGoal.vue";
+import ActiveGoal from "@/components/ActiveGoal.vue";
+import ManageGoal from "@/components/ManageGoal.vue";
 
 export default {
   components: {
@@ -26,9 +34,12 @@ export default {
     UserInfo,
     TheHeader,
     CourseGoal,
+    ActiveGoal,
+    ManageGoal,
   },
   data() {
     return {
+      selectedComponent: 'active-goal',
       activeUser: {
         name: 'John Doe',
         description: 'Site owner and admin',
@@ -36,6 +47,11 @@ export default {
       },
     };
   },
+  methods: {
+    setSelectedComponent(component) {
+      this.selectedComponent = component;
+    }
+  }
 };
 </script>
 
